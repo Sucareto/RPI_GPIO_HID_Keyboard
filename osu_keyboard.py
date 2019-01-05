@@ -2,16 +2,15 @@
 import RPi.GPIO as GPIO
 import signal
 
-PIN_A = 35
-PIN_B = 37
-key_z = '\x00\x00\x00\x1D\x00\x00\x00\x00'
-key_x = '\x00\x00\x00\x1B\x00\x00\x00\x00'
-key_zx= '\x00\x00\x1D\x1B\x00\x00\x00\x00'
-clean = '\x00\x00\x00\x00\x00\x00\x00\x00'
+PIN_A = 37
+PIN_B = 35
+
+KEY_A = '\x1D'
+KEY_B = '\x1B'
 
 def signal_handler(signal,frame):
 	f = open('/dev/hidg0','w');
-	f.write(clean)
+	f.write('\x00' * 8)
 	f.close()
 	GPIO.cleanup()
 	exit()
@@ -25,17 +24,15 @@ GPIO.setup(PIN_B,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 while True:
         f = open('/dev/hidg0','w');
 
-        if GPIO.input(PIN_A) == GPIO.LOW and GPIO.input(PIN_B) == GPIO.LOW:
-        	keycode = key_zx
+	k1 = '\x00'
+	k2 = '\x00'
 
-        elif GPIO.input(PIN_A) == GPIO.LOW:
-		keycode = key_z
+        if GPIO.input(PIN_A) == GPIO.LOW:
+		k1 = KEY_A
 
-        elif GPIO.input(PIN_B) == GPIO.LOW:
-        	keycode = key_x
+        if GPIO.input(PIN_B) == GPIO.LOW:
+        	k2 = KEY_B
 
-        else:
-        	keycode = clean
-
+	keycode = '\x00' * 2 + k1 + k2 + '\x00' * 4
         f.write(keycode)
         f.close()
