@@ -41,10 +41,10 @@ while True:
         	k2 = K_2
 
         if GPIO.input(P_3) == GPIO.LOW:
-                k2 = K_3
+                k3 = K_3
 
 	if GPIO.input(P_4) == GPIO.LOW:
-                k2 = K_4
+                k3 = K_4
 
 	keycode = '\x00' * 2 + k1 + k2 + k3 + k4 + '\x00' * 2
         f.write(keycode)
