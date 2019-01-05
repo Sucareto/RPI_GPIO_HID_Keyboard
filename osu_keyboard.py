@@ -1,12 +1,22 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
+import signal
 
 PIN_A = 35
 PIN_B = 37
 key_z = '\x00\x00\x00\x1D\x00\x00\x00\x00'
 key_x = '\x00\x00\x00\x1B\x00\x00\x00\x00'
 key_zx= '\x00\x00\x1D\x1B\x00\x00\x00\x00'
-close = '\x00\x00\x00\x00\x00\x00\x00\x00'
+clean = '\x00\x00\x00\x00\x00\x00\x00\x00'
+
+def signal_handler(signal,frame):
+	f = open('/dev/hidg0','w');
+	f.write(clean)
+	f.close()
+	GPIO.cleanup()
+	exit()
+
+signal.signal(signal.SIGINT,signal_handler)
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN_A,GPIO.IN,pull_up_down=GPIO.PUD_UP)
@@ -19,15 +29,13 @@ while True:
         	keycode = key_zx
 
         elif GPIO.input(PIN_A) == GPIO.LOW:
-			keycode = key_z
+		keycode = key_z
 
         elif GPIO.input(PIN_B) == GPIO.LOW:
         	keycode = key_x
 
         else:
-        	keycode = close
+        	keycode = clean
 
         f.write(keycode)
         f.close()
-
-GPIO.cleanup()
