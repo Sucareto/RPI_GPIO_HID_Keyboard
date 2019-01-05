@@ -13,7 +13,7 @@
 
 轴体被按下时两脚将被短接，PIN 口会变成 LOW 模式，写入对应 KeyCode 后发送。
 
-关于 HID Keyboard 具体原理请参考：[使用树莓派 Zero 实现带回显的新型 Bad USB](http://shumeipai.nxez.com/2018/06/26/using-raspberry-pi-zero-to-implement-new-bad-usb-with-echo.html)
+关于 HID Keyboard 具体原理请参考：[Using RPi Zero as a Keyboard](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)
 
 
 ## 依赖项目：
@@ -33,6 +33,10 @@ Raspberry Pi Zero W （当前主要测试环境）
 
 
 ## 一些附加资料：
+
+[Using RPi Zero as a Keyboard Part 3: Sending and receiving reports](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-send-reports)
+
+[使用树莓派 Zero 实现带回显的新型 Bad USB](http://shumeipai.nxez.com/2018/06/26/using-raspberry-pi-zero-to-implement-new-bad-usb-with-echo.html)（注意，此文章应该是翻译上面那篇的，其中有部分错误，仅用于中文参考）
 
 键值定义表：[10 keyboard keypad page (0x07)](http://d1.amobbs.com/bbs_upload782111/files_47/ourdev_692986N5FAHU.pdf)
 
