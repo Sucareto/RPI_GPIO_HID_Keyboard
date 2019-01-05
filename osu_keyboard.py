@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 
-PIN_B = 35
+PIN_A = 35
 PIN_B = 37
 key_z = '\x00\x00\x00\x1D\x00\x00\x00\x00'
 key_x = '\x00\x00\x00\x1B\x00\x00\x00\x00'
