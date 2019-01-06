@@ -22,27 +22,29 @@
 
 ## 依赖项目：
 
-初始化 HID 设备：[Moe-New/P4wnP1](https://github.com/Moe-New/P4wnP1)（非必须，只要能初始化 HID 设备并控制就可以）
++ 初始化 HID 设备：[Using RPi Zero as a Keyboard Part 1: Setup and device definition](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)（未测试，似乎不能和 USB 以太网同时开启）
 
-GPIO 控制：[RPi.GPIO · PyPI](https://pypi.org/project/RPi.GPIO/)（必须，python 控制 GPIO 的库）
+或者 [Moe-New/P4wnP1](https://github.com/Moe-New/P4wnP1)（推荐使用，可以利用该项目中的其他功能进行调试）
+
++ Python 2.7+
+
++ GPIO 控制：[RPi.GPIO · PyPI](https://pypi.org/project/RPi.GPIO/)（必须，Python 控制 GPIO 的库）
 
 
 ## 适用设备：
 
-Raspberry Pi Zero （未测试）
++ Raspberry Pi Zero （未测试）
 
-Raspberry Pi Zero W （当前主要测试环境）
-
-或者其他支持作为 HID Device 的设备...
++ Raspberry Pi Zero W （当前主要测试环境）
 
 
 ## 一些附加资料：
 
-操作例子（英文）：[Using RPi Zero as a Keyboard Part 3: Sending and receiving reports](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-send-reports)
++ 初始化与发送数据：[Using RPi Zero as a Keyboard Part 3: Sending and receiving reports](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-send-reports)
 
-操作例子（中文）：[使用树莓派 Zero 实现带回显的新型 Bad USB](http://shumeipai.nxez.com/2018/06/26/using-raspberry-pi-zero-to-implement-new-bad-usb-with-echo.html)
++ 操作例子：[使用树莓派 Zero 实现带回显的新型 Bad USB](http://shumeipai.nxez.com/2018/06/26/using-raspberry-pi-zero-to-implement-new-bad-usb-with-echo.html)
 
-键值定义表：[10 keyboard keypad page (0x07)](http://d1.amobbs.com/bbs_upload782111/files_47/ourdev_692986N5FAHU.pdf)
++ 键值定义表：[10 keyboard keypad page (0x07)](http://d1.amobbs.com/bbs_upload782111/files_47/ourdev_692986N5FAHU.pdf)
 
-键值在线查询：[USB HID Keyboard Scan Codes](https://serverhelfer.de/usb-hid-keyboard-scan-codes/)
++ 键值在线查询：[USB HID Keyboard Scan Codes](https://serverhelfer.de/usb-hid-keyboard-scan-codes/)
 
