@@ -22,9 +22,9 @@
 
 ## 依赖项目：
 
-+ 初始化 HID 设备：[Using RPi Zero as a Keyboard Part 1: Setup and device definition](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)（未测试，似乎不能和 USB 以太网同时开启）
-
-或者 [Moe-New/P4wnP1](https://github.com/Moe-New/P4wnP1)（推荐使用，可以利用该项目中的其他功能进行调试）
++ 初始化 HID 设备：
+  - [Using RPi Zero as a Keyboard Part 1: Setup and device definition](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)（未测试，似乎不能和 USB 以太网同时开启）
+  - [Moe-New/P4wnP1](https://github.com/Moe-New/P4wnP1)（推荐使用，可以利用该项目中的其他功能进行调试）
 
 + Python 2.7+
 
