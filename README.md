@@ -15,7 +15,7 @@
 
 启动脚本时会将目标 PIN 调为 HIGH 模式，然后循环检测该 PIN 口状态。
 
-轴体被按下时两脚将被短接，PIN 口会变成 LOW 模式，写入对应 KeyCode 后发送。
+轴体被按下时两脚闭合，PIN 口会变成 LOW 模式，写入对应 KeyCode 后发送。
 
 关于 Raspberry Pi HID Keyboard 具体原理与操作请参考：[Using RPi Zero as a Keyboard](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)
 
