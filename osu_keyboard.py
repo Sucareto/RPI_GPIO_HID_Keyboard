@@ -3,13 +3,10 @@ import RPi.GPIO as GPIO
 import signal
 import time
 
-PIN_A = 37
-PIN_B = 35
+KEY1 = [37,'\x1D']
+KEY2 = [35,'\x1B']
 
-KEY_A = '\x1D'
-KEY_B = '\x1B'
-
-keycode_tmp = ""
+keycode_tmp = '\x00' * 8
 
 def signal_handler(signal,frame):
 	f = open('/dev/hidg0','w');
@@ -21,17 +18,13 @@ def signal_handler(signal,frame):
 signal.signal(signal.SIGINT,signal_handler)
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(PIN_A,GPIO.IN,pull_up_down=GPIO.PUD_UP)
-GPIO.setup(PIN_B,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+GPIO.setup(KEY1[0],GPIO.IN,pull_up_down=GPIO.PUD_UP)
+GPIO.setup(KEY2[0],GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
 while 1:
-	k1,k2 = '\x00','\x00'
+        k1 = KEY1[1] if GPIO.input(KEY1[0]) is GPIO.LOW else "\x00"
 
-        if GPIO.input(PIN_A) is GPIO.LOW:
-		k1 = KEY_A
-
-        if GPIO.input(PIN_B) is GPIO.LOW:
-        	k2 = KEY_B
+        k2 = KEY2[1] if GPIO.input(KEY2[0]) is GPIO.LOW else "\x00"
 
 	keycode = '\x00' * 2 + k1 + k2 + '\x00' * 4
 
