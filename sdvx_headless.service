@@ -1,0 +1,8 @@
+[Unit]
+Description=sdvx_controller
+
+[Service]
+Type=simple
+ExecStart=/opt/sdvx_headless.py
+[Install]
+WantedBy=multi-user.target

@@ -2,7 +2,9 @@
 import RPi.GPIO as GPIO
 import signal
 import time
+import os
 
+RUN = 40
 KEY_LIST = {
 	'V-L1':{'PIN':3,'KEY':'\x14'},#Q
 	'V-L2':{'PIN':5,'KEY':'\x1a'},#W
@@ -18,23 +20,33 @@ KEY_LIST = {
 
 	'FX-L':{'PIN':13,'KEY':'\x0a'},#G
 	'FX-R':{'PIN':29,'KEY':'\x0b'},#H
+
+	'START':{'PIN':15,'KEY':'\x28'},#ENTER
 }
 
 keycode_tmp = "\x00" * 8
 
-def signal_handler(signal,frame):
+def POW(PIN):
+	GPIO.remove_event_detect(PIN)
+	os.system('poweroff')
+	clear(0,0)
+
+def clear(signal,frame):
 	f = open("/dev/hidg0","w");
 	f.write("\x00" * 8)
 	f.close()
 	GPIO.cleanup()
 	exit()
 
-signal.signal(signal.SIGINT,signal_handler)
+signal.signal(signal.SIGINT,clear)
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 for P in KEY_LIST.keys():
 	GPIO.setup(KEY_LIST[P]['PIN'],GPIO.IN,pull_up_down=GPIO.PUD_UP)
+
+GPIO.setup(RUN,GPIO.IN,pull_up_down=GPIO.PUD_UP)
+GPIO.add_event_detect(RUN,GPIO.FALLING,callback=POW,bouncetime=1000)
 
 while 1:
 	ks = "\x00" * 2
