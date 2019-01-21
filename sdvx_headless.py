@@ -24,7 +24,7 @@ KEY_LIST = {
 	'START':{'PIN':15,'KEY':'\x28'},#ENTER
 }
 
-keycode_tmp = "\x00" * 8
+keycode_tmp = "\x00" * 2
 
 def POW(PIN):
 	GPIO.remove_event_detect(PIN)

@@ -20,7 +20,7 @@ KEY_LIST = {
 	'FX-R':{'PIN':29,'KEY':'\x0b'},#H
 }
 
-keycode_tmp = "\x00" * 8
+keycode_tmp = "\x00" * 2
 
 def signal_handler(signal,frame):
 	f = open("/dev/hidg0","w");
