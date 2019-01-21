@@ -28,7 +28,7 @@ keycode_tmp = "\x00" * 2
 
 def POW(PIN):
 	GPIO.remove_event_detect(PIN)
-	os.system('poweroff')
+	os.system('sync;poweroff')
 	clear(0,0)
 
 def clear(signal,frame):
