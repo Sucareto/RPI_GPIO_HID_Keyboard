@@ -45,8 +45,8 @@ GPIO.setmode(GPIO.BOARD)
 for P in KEY_LIST.keys():
 	GPIO.setup(KEY_LIST[P]['PIN'],GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
-if sys.argv[1] in ['headless','-h']:
-	PIN = 40
+if sys.argv[1:2] == ['headless']:
+	RUN = 40
 	GPIO.setup(RUN,GPIO.IN,pull_up_down=GPIO.PUD_UP)
 	GPIO.add_event_detect(RUN,GPIO.FALLING,callback=POW,bouncetime=1000)
 
@@ -60,7 +60,7 @@ while 1:
 		keycode_tmp = ks
 		keycode = ks + "\x00" * ( 8 - len(ks))
 		f = open("/dev/hidg0","w")
-	        f.write(keycode[0:8])
-	        f.close()
+		f.write(keycode[0:8])
+		f.close()
 
 	time.sleep(0.01)
