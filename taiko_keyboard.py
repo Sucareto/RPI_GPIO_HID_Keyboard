@@ -17,7 +17,7 @@ K_4 = '\x19'    #V
 keycode_tmp = ""
 
 def signal_handler(signal,frame):
-	f = open("/dev/hidg0","w");
+	f = open("/dev/hidg0","w")
 	f.write("\x00" * 8)
 	f.close()
 	GPIO.cleanup()
@@ -50,7 +50,7 @@ while 1:
 
 	if keycode_tmp != keycode:
 		keycode_tmp = keycode
-		f = open("/dev/hidg0","w");
+		f = open("/dev/hidg0","w")
 	        f.write(keycode)
 	        f.close()
 
