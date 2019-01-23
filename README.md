@@ -28,7 +28,7 @@
 
 + Python 2.7+
 
-+ GPIO 控制：[RPi.GPIO · PyPI](https://pypi.org/project/RPi.GPIO/)（必须，Python 控制 GPIO 的库）
++ GPIO 控制：[RPi.GPIO](https://pypi.org/project/RPi.GPIO/)（必须，Python 控制 GPIO 的库）
 
 
 ## 适用设备：
@@ -37,9 +37,11 @@
 
 + Raspberry Pi Zero W （当前主要测试环境）
 
+## 使用方法：
+请查看 [wiki](https://github.com/Moe-New/RPI_GPIO_HID_Keyboard/wiki)
 
 ## 一些附加资料：
-
++ 开发记录：[ZeroW 模拟键盘的开发记录](https://moe-new.github.io/2019/01/ZeroW-%E6%A8%A1%E6%8B%9F%E9%94%AE%E7%9B%98%E7%9A%84%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/)
 + 初始化与发送数据：[Using RPi Zero as a Keyboard Part 3: Sending and receiving reports](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-send-reports)
 
 + 操作例子：[使用树莓派 Zero 实现带回显的新型 Bad USB](http://shumeipai.nxez.com/2018/06/26/using-raspberry-pi-zero-to-implement-new-bad-usb-with-echo.html)
