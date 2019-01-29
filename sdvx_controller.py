@@ -24,6 +24,7 @@ KEY_LIST = {
 	'START':{'PIN':15,'KEY':'\x28'},#ENTER
 }
 
+f = open("/dev/hidg0","w")
 keycode_tmp = "\x00" * 2
 
 def POW(PIN):
@@ -32,7 +33,6 @@ def POW(PIN):
 	clear(0,0)
 
 def clear(signal,frame):
-	f = open("/dev/hidg0","w")
 	f.write("\x00" * 8)
 	f.close()
 	GPIO.cleanup()
@@ -59,8 +59,7 @@ while 1:
 	if keycode_tmp != ks:
 		keycode_tmp = ks
 		keycode = ks + "\x00" * ( 8 - len(ks))
-		f = open("/dev/hidg0","w")
 		f.write(keycode[0:8])
-		f.close()
+		f.flush()
 
 	time.sleep(0.01)
