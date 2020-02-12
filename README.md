@@ -1,9 +1,9 @@
 # RPI\_GPIO\_HID\_Keyboard
 **使用树莓派 GPIO 控制的模拟键盘！**
 
-**该项目的开发已完成，如无 bug，这将是最终版本。**
+**该项目的开发已完成，这是最终版本。**
 
-**一些记录信息请看 [ZeroW 模拟键盘的开发记录](https://moe-new.github.io/2019/01/ZeroW-%E6%A8%A1%E6%8B%9F%E9%94%AE%E7%9B%98%E7%9A%84%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/)。**
+**一些记录信息请看 [ZeroW 模拟键盘的开发记录](https://Sucaretto.github.io/2019/01/ZeroW-%E6%A8%A1%E6%8B%9F%E9%94%AE%E7%9B%98%E7%9A%84%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/)。**
 
 ## 项目介绍：
 
@@ -26,9 +26,7 @@
 
 ## 依赖项目：
 
-+ 初始化 HID 设备：
-  - [Using RPi Zero as a Keyboard Part 1: Setup and device definition](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)（已参考该文章制作[初始化脚本](https://github.com/Moe-New/RPI_GPIO_HID_Keyboard/blob/master/Setup/USB_Setup.sh)）
-  - [Moe-New/P4wnP1](https://github.com/Moe-New/P4wnP1)（推荐使用，可以利用该项目中的其他功能进行调试）
++ 初始化 HID 设备：[Using RPi Zero as a Keyboard Part 1: Setup and device definition](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition)（已参考该文章制作[初始化脚本](https://github.com/Sucaretto/RPI_GPIO_HID_Keyboard/blob/master/Setup/USB_Setup.sh)）
 
 + Python 2.7+
 
@@ -42,10 +40,10 @@
 + Raspberry Pi Zero W （当前主要测试环境）
 
 ## 使用方法：
-请查看 [wiki](https://github.com/Moe-New/RPI_GPIO_HID_Keyboard/wiki)
+请查看 [wiki](https://github.com/Sucaretto/RPI_GPIO_HID_Keyboard/wiki)
 
 ## 一些附加资料：
-+ 开发记录：[ZeroW 模拟键盘的开发记录](https://moe-new.github.io/2019/01/ZeroW-%E6%A8%A1%E6%8B%9F%E9%94%AE%E7%9B%98%E7%9A%84%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/)
++ 开发记录：[ZeroW 模拟键盘的开发记录](https://Sucaretto.github.io/2019/01/ZeroW-%E6%A8%A1%E6%8B%9F%E9%94%AE%E7%9B%98%E7%9A%84%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/)
 
 + 初始化与发送数据：[Using RPi Zero as a Keyboard Part 3: Sending and receiving reports](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-send-reports)
 
